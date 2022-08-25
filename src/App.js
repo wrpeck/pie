@@ -51,7 +51,10 @@ function App() {
             }
           },
           'Applicants' : {
-            children: 'Icebreakers'
+            children: 'Icebreakers',
+            onClick: () => {
+              openInNewTab('https://drive.google.com/drive/folders/15OaK-YTYpDvSlnThYCnlO3-oDRG0GGw4?usp=sharing')
+            }
           },
           'Company' : {
             children: 'WithJoy Site',
