@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "pie",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-08-17T04:50:34.342Z"
+}

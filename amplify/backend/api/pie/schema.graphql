@@ -1,0 +1,31 @@
+type Tags @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  PieFilling: [PieFilling] @manyToMany(relationName: "PieFillingTags")
+  Recipes: [Recipes] @manyToMany(relationName: "RecipesTags")
+}
+
+type PieFilling @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  description: String
+  Recipes: [Recipes] @hasMany(indexName: "byPieFilling", fields: ["id"])
+  tags: [Tags] @manyToMany(relationName: "PieFillingTags")
+  image: AWSURL
+  longdescription: String
+}
+
+type Recipes @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  description: String
+  piefillingID: ID! @index(name: "byPieFilling")
+  tags: [Tags] @manyToMany(relationName: "RecipesTags")
+}
+
+type Todo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  description: String
+}
+ 
